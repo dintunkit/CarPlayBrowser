@@ -39,7 +39,7 @@ public struct CarPlayUserAgentManager {
 
     /// Resolves the WKContentMode corresponding to the desktop toggle state.
     @available(iOS 13.0, *)
-    public static func preferredContentMode(for isDesktop: Bool) -> WKContentMode {
+    public static func preferredContentMode(for isDesktop: Bool) -> WKWebpagePreferences.ContentMode {
         return isDesktop ? .desktop : .mobile
     }
 

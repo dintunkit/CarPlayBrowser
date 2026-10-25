@@ -61,7 +61,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     public func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,
-        options: UISceneConnectionOptions
+        options: UIScene.ConnectionOptions
     ) -> UISceneConfiguration {
         // Route iPhone Window Scene
         if connectingSceneSession.role == .windowApplication {
