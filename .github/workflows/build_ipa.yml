@@ -1,0 +1,46 @@
+name: Build CarPlay Browser IPA
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode Project
+        run: |
+          xcodegen generate
+
+      - name: Build and Archive
+        run: |
+          xcodebuild archive \
+            -project CarPlayBrowser.xcodeproj \
+            -scheme CarPlayBrowser \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            -archivePath build/CarPlayBrowser.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Package IPA
+        run: |
+          mkdir -p Payload
+          cp -r build/CarPlayBrowser.xcarchive/Products/Applications/CarPlayBrowser.app Payload/
+          zip -r CarPlayBrowser.ipa Payload
+          mkdir -p output
+          mv CarPlayBrowser.ipa output/
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CarPlayBrowser-IPA
+          path: output/CarPlayBrowser.ipa

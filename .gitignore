@@ -1,0 +1,16 @@
+.agents/
+mingit/
+*.zip
+*.rar
+*.log
+test_results.json
+TEST_READY.md
+TEST_INFRA.md
+PROJECT.md
+ORIGINAL_REQUEST.md
+.DS_Store
+build/
+output/
+Payload/
+*.ipa
+*.xcarchive

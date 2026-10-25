@@ -1,0 +1,33 @@
+name: CarPlayBrowser
+options:
+  bundleIdPrefix: com.carplaybrowser
+  deploymentTarget:
+    iOS: "15.0"
+  xcodeVersion: "15.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    TARGETED_DEVICE_FAMILY: "1" # iPhone only
+
+targets:
+  CarPlayBrowser:
+    type: application
+    platform: iOS
+    sources:
+      - path: CarPlayBrowser
+        excludes:
+          - "Configuration/Info.plist"
+          - "Configuration/CarPlayBrowser.entitlements"
+          - "README.md"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.carplaybrowser.app
+        INFOPLIST_FILE: CarPlayBrowser/Configuration/Info.plist
+        CODE_SIGN_ENTITLEMENTS: CarPlayBrowser/Configuration/CarPlayBrowser.entitlements
+        ENABLE_BITCODE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_OPTIMIZATION_LEVEL: "-O"
+    entitlements:
+      path: CarPlayBrowser/Configuration/CarPlayBrowser.entitlements
