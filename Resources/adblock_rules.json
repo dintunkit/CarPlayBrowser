@@ -1,0 +1,100 @@
+[
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?doubleclick\\.net/",
+      "resource-type": ["script", "image", "raw", "subdocument", "xmlhttprequest"]
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?googlesyndication\\.com/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?googleadservices\\.com/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?adservice\\.google\\.com/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?youtube\\.com/pagead/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?youtube\\.com/api/stats/ads"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?youtube\\.com/ptracking"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?youtube\\.com/get_midroll_info"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?adnxs\\.com/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?scorecardresearch\\.com/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": "^https?://+([a-zA-Z0-9.-]+\\.)?amazon-adsystem\\.com/"
+    },
+    "action": {
+      "type": "block"
+    }
+  },
+  {
+    "trigger": {
+      "url-filter": ".*"
+    },
+    "action": {
+      "type": "css-display-none",
+      "selector": ".ytp-ad-overlay-container, .ytp-ad-overlay-slot, #player-ads, #masthead-ad, .ytp-ad-player-overlay, ytd-ad-slot-renderer, ytd-in-feed-ad-layout-renderer, ytd-banner-promo-renderer, ytd-promoted-sparkles-web-renderer, ytd-display-ad-renderer, ytm-promoted-sparkles-web-renderer, ytm-companion-ad-renderer, .sparkles-light-cta, .video-ads, .ytp-ad-module, .ytp-ad-player-overlay-layout"
+    }
+  }
+]
